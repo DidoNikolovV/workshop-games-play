@@ -1,3 +1,5 @@
+import { Routes, Route } from 'react-router-dom';
+
 import './App.css';
 import { Header } from './components/Header/Header';
 import { Home } from './components/Home/Home';
@@ -9,7 +11,9 @@ function App() {
 
       {/* Main Content */}
       <main id="main-content">
-        <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
       </main>
       {/* Login Page ( Only for Guest users ) */}
       {/* <section id="login-page" className="auth">
