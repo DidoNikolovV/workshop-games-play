@@ -42,14 +42,17 @@ export const GameDetails = ({
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        <li className="comment">
-                            <p>Content: I rate this one quite highly.</p>
-                        </li>
-                        <li className="comment">
-                            <p>Content: The best game.</p>
-                        </li>
+                        {game.comments?.map(x =>
+                            <li className="comment">
+                                <p>Content: {x}</p>
+                            </li>
+                        )}
                     </ul>
-                    <p className="no-comment">No comments.</p>
+
+                    {!game.comments &&
+                        <p className="no-comment">No comments.</p>
+                    }
+
                 </div>
                 <div className="buttons">
                     <Link to="/edit" className="button">
